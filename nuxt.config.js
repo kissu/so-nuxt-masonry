@@ -14,12 +14,9 @@ export default {
         content: "Official Nuxt.js starter for CodeSandBox"
       }
     ],
-    script: [
-      {
-        src:
-          "https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"
-      }
-    ],
+    // script: [
+    //   { hid: 'masonry', src: 'https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js', async: true }
+    // ],
     link: [
       { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
       {

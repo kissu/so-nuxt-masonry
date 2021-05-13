@@ -12,6 +12,7 @@
     "post-update": "yarn upgrade --latest"
   },
   "dependencies": {
+    "masonry-layout": "^4.2.2",
     "nuxt": "^2.15.0"
   },
   "keywords": []

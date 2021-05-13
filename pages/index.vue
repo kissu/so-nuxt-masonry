@@ -1,8 +1,9 @@
 <template>
   <main class="container py-5">
     <h1>Bootstrap and Masonry</h1>
+    <button @click="click">nice</button>
 
-    <div class="row" data-masonry='{"percentPosition": true }'>
+    <div class="row" id="masonry">
       <div class="col-sm-6 col-lg-4 mb-4">
         <div class="card">
           <svg
@@ -23,9 +24,8 @@
           <div class="card-body">
             <h5 class="card-title">Card title that wraps to a new line</h5>
             <p class="card-text">
-              This is a longer card with supporting text below as a natural
-              lead-in to additional content. This content is a little bit
-              longer.
+              This is a longer card with supporting text below as a natural lead-in to additional content.
+              This content is a little bit longer.
             </p>
           </div>
         </div>
@@ -62,8 +62,7 @@
           <div class="card-body">
             <h5 class="card-title">Card title</h5>
             <p class="card-text">
-              This card has supporting text below as a natural lead-in to
-              additional content.
+              This card has supporting text below as a natural lead-in to additional content.
             </p>
             <p class="card-text">
               <small class="text-muted">Last updated 3 mins ago</small>
@@ -87,10 +86,7 @@
         <div class="card text-center">
           <div class="card-body">
             <h5 class="card-title">Card title</h5>
-            <p class="card-text">
-              This card has a regular title and short paragraph of text below
-              it.
-            </p>
+            <p class="card-text">This card has a regular title and short paragraph of text below it.</p>
             <p class="card-text">
               <small class="text-muted">Last updated 3 mins ago</small>
             </p>
@@ -132,9 +128,8 @@
           <div class="card-body">
             <h5 class="card-title">Card title</h5>
             <p class="card-text">
-              This is another card with title and supporting text below. This
-              card has some additional content to make it slightly taller
-              overall.
+              This is another card with title and supporting text below. This card has some additional content
+              to make it slightly taller overall.
             </p>
             <p class="card-text">
               <small class="text-muted">Last updated 3 mins ago</small>
@@ -146,3 +141,21 @@
   </main>
 </template>
 
+<script>
+export default {
+  data() {
+    return {
+      nice: false,
+    }
+  },
+  methods: {
+    async click() {
+      if (process.browser) {
+        let { default: Masonry } = await import('masonry-layout')
+        new Masonry('#masonry', { percentPosition: true })
+        this.nice = true
+      }
+    },
+  },
+}
+</script>
